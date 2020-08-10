@@ -5,14 +5,16 @@ import { Button, Dropdown } from "react-bootstrap";
 import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
-import InputCard from "../components/InputCard";
+import CardDeck from "../components/CardDeck";
 
 const IndexPage = () => {
   return (
     <div>
-      <div>
-        <InputCard />
+      <div class="container">
+        <CardDeck titles={["History"]} mins={[4]} maxs={[16]} />
       </div>
+      
+
       <header class="masthead d-flex" id="headerMaster">
         <inputCard></inputCard>
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>

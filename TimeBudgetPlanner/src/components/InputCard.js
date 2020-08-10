@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
+import { Dropdown } from "react-bootstrap";
+import Slider from './Slider'
 
-class InputCard extends Component {
-  render() {
+export default function InputCard(props) {
     return (
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">History</h4>
-                    <select id="a" class="custom-select my-1 mr-sm-2">
-                    <option selected="">Choose...</option>
-                    <option value="World-Cultures">World Cultures</option></select>
-                <input step="0.1" type="range" class="custom-range" id="aRange" value="0"/>
+                <h4 class="card-title">{props.title}</h4>
+                <Dropdown class="custom-select my-1 mr-sm-2">
+                    <Dropdown.Toggle>
+                        Choose a class
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item href="/fhs" value="World-Cultures">World Cultures</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+
+                <Slider min={props.min} max={props.max} />
+
                 <h3 class="card-text" id="aHours">0 hours</h3>
             </div>
         </div>
     );
-  }
 }
-
-export default InputCard;
