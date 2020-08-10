@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Header from "../components/header"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import InputCard from '../components/InputCard'
 
 const schoolCode = 'Fhs';
 
@@ -28,7 +29,7 @@ const IndexPage = ({ data }) => {
       <p>Test</p>
 
       {classNodes.map(node => (
-        <p>{node.Class_Name}</p>
+        <InputCard title={node.Class_Name} min={node.Minimum_Recomended_Hours} max={node.Maximum_Recomended_Hours}/>
       ))}
     </div>
   )
