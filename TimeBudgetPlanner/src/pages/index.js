@@ -5,13 +5,13 @@ import { Button, Dropdown } from "react-bootstrap";
 import Layout from "../components/layout";
 import Image from "../components/image";
 import SEO from "../components/seo";
-import CardDeck from "../components/CardDeck";
+import HSCT from "../components/HSCT";
 
 const IndexPage = () => {
   return (
     <div>
-      <div class="container">
-        <CardDeck titles={["History"]} mins={[4]} maxs={[16]} />
+      <div>
+        <HSCT />
       </div>
       
 
