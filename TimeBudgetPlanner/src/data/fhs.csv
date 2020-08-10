@@ -1,0 +1,120 @@
+Class Name,Minimum Recomended Hours,Maximum Recomended Hours,Category Letters
+World Cultures,2,16,a
+GPS World Cultures,2,16,a
+AP European History,4,16,a
+U.S. History,1.5,16,a
+GPS U.S. History,1.5,16,a
+AP U.S. History,5,16,a
+Economics,1.5,16,a
+Government,1.5,16,a
+Government/Economics,1.5,16,a
+AP U.S. Government and Politics,5,16,a
+AP Human Geography,3,16,a
+English 1,2,16,b
+English 2,2,16,b
+English 3,2,16,b
+English 4,1,16,b
+GPS English 1,2,16,b
+Honors English 1 (Pre-AP),1.5,16,b
+Honors English 2 (Pre-AP),3,16,b
+GPS English 4,1,16,b
+AP English Language & Composition,4,16,b
+AP English Literature & Composition,4,16,b
+CSU ERWC,1,16,b
+Integrated Math 1,2,16,cg
+Integrated Math 2,2,16,cg
+Integrated Math 3,3,16,cg
+Advanced Algebra With Financial Applications,2.5,16,cg
+Statistics/Problem Solving,1.5,16,cg
+AP Statistics,4,16,cg
+Trigonometry,3,16,cg
+Pre-Calculus,4,16,cg
+Highlights of Calculus,3,16,cg
+AP Calculus AB,7,16,cg
+AP Calculus BC,5,16,cg
+Biology: The Living Earth,2,16,dg
+Physics in the Universe,1.5,16,dg
+Chemistry in the Earth System,2,16,dg
+Honors Chemistry in the Earth System,3,16,dg
+AP Biology,5,16,dg
+AP Chemistry,6,16,dg
+Honors Physics,2,16,dg
+AP Physics,3,16,dg
+AP Environmental Science,5.5,16,dg
+Forensics,2,16,dg
+Human Anatomy and Physiology,2,16,dg
+French 1,1.5,16,e
+French 2,2,16,e
+French 3,2.5,16,e
+French AP Lang,3,16,e
+German 1,1.5,16,e
+German 2,2,16,e
+German 3,2.5,16,e
+German AP Lang,3,16,e
+Spanish 1,1.5,16,e
+Spanish 2,2,16,e
+Spanish 3,2.5,16,e
+Spanish 4,3,16,e
+Spanish AP Lang,3,16,e
+Beginning Chorus,0.7,16,fg
+Chamber Choir,2,16,fg
+Concert Band,4,16,fg
+Concert Choir,2,16,fg
+Jazz Band,4,16,fg
+Jazz Choir,4,16,fg
+Orchestra,2,16,fg
+Guitar,2.5,16,fg
+Ceramics 1,0,16,fg
+Ceramics 2,0,16,fg
+Ceramics 3,0,16,fg
+Drawing and Painting 1,1,16,fg
+Drawing and Painting 2,1,16,fg
+Drawing and Painting 3,2.5,16,fg
+AP Studio Art (Drawing/Painting),2.5,16,fg
+Digital Art 1,0.3,16,fg
+Digital Art 2,0.3,16,fg
+AP 2-D Design (Digital),1,16,fg
+Drama 1,0.5,16,fg
+Drama 2,1,16,fg
+Drama 3,1,16,fg
+Drama 4,1,16,fg
+Technical Theater in Production,0,16,fg
+Musical Theatre,1,16,fg
+Video Production 1,0,16,fg
+Film as Visual Literature,0,16,fg
+Advanced Drafting and Architecture,2,16,fg
+Psychology/Sociology,0,16,g
+AP Psychology,1,16,g
+AP Seminar,8,16,g
+AP Research,8,16,g
+Speech and Debate 1,1,16,g
+Speech and Debate 2,1,16,g
+Humanities 1: Critical Thinking with a Global Perspective,0,16,g
+Video Production 2,1,16,fg
+Exploring Computer Science,0,16,g
+Computer Science and Programming,0,16,g
+Computer Game Design,0,16,g
+AP Computer Science A,3,16,cg
+PLTW 1 Engineering Design,2,16,g
+PLTW 2 Principles of Engineering,2,16,dg
+PLTW 3 Civil Engineering,2,16,dg
+PLTW 3 Biotechnical Engineering,1,16,g
+Introduction to Product Innovation Design & Manufacturing,0.3,16,g
+Advanaced Product Innovation Design & Manufacturing,0.3,16,o
+Health Education,0.5,16,o
+Enriched Health Education,0.5,16,o
+Fitness 1,0.3,16,o
+Fit 2-Aerobics,0.3,16,o
+Fit 2-Dance,0.3,16,o
+Fit 2- Team Activities,0.3,16,o
+Course 3- Weight Training,0.3,16,o
+Course 3- Sports Specific Training,0.3,16,o
+Course 4- Advanced Conditioning (Football),0.3,16,o
+Course 4- Yoga,0.3,16,o
+AP 2-D Design,1,16,fg
+Computer Applications,0,16,o
+Computer Animation & Game Design,0,16,g
+Advanced Drafting and Architecture,2,16,g
+TV Production,2,16,f
+Yearbook,1,16,o
+Introduction to Technical Theater in Production,1,16,fg
