@@ -1,25 +1,24 @@
 import React from "react";
-import { Link } from "gatsby";
-import { Button, Dropdown } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 
-import Layout from "../components/layout";
-import Image from "../components/image";
-import SEO from "../components/seo";
 import HSCT from "../components/HSCT";
+import PT from "../components/PT";
 
 const IndexPage = () => {
   return (
     <div>
       <div>
         <HSCT />
+        
+        <PT />
       </div>
       
 
       <header class="masthead d-flex" id="headerMaster">
         <inputCard></inputCard>
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>
-          <h1 class="mb-1" style={{"padding-bottom": "100px"}}>Time Budget Planner</h1>
-          <Dropdown id="schoolSelect" style={{"padding-bottom": "100px"}}>
+          <h1 class="mb-1" style={{"paddingBottom": "100px"}}>Time Budget Planner</h1>
+          <Dropdown id="schoolSelect" style={{"paddingBottom": "100px"}}>
             <Dropdown.Toggle>
               Select a School
             </Dropdown.Toggle>

@@ -6,9 +6,6 @@ export default function InputCard(props) {
 
     const [ item, setItem ] = React.useState('');
     const handleSelect = (e) => {
-        console.log(e)
-        console.log("hello")
-        console.log(Object.keys(classes))
         setItem(e)
         
     }
