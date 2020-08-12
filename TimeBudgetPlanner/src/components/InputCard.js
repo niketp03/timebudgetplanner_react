@@ -3,23 +3,60 @@ import { Dropdown } from "react-bootstrap";
 import Slider from './Slider'
 
 export default function InputCard(props) {
-    return (
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">{props.title}</h4>
-                <Dropdown class="custom-select my-1 mr-sm-2">
-                    <Dropdown.Toggle>
-                        Choose a class
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href="/fhs" value="World-Cultures">World Cultures</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
 
-                <Slider min={props.min} max={props.max} />
+    const [ item, setItem ] = React.useState('');
+    const handleSelect = (e) => {
+        console.log(e)
+        console.log("hello")
+        console.log(Object.keys(classes))
+        setItem(e)
+        
+    }
+    const classes = props.classes
 
-                <h3 class="card-text" id="aHours">0 hours</h3>
+    const classItems = Object.keys(classes).map(function(key, index) {
+        console.log(classes[key])
+        return <Dropdown.Item eventKey={key}>{key}</Dropdown.Item>;
+    });
+
+
+
+    if (item == ''){
+        return (
+            <div class="card">
+                
+                <div class="card-body">
+                    <h4 class="card-title">{props.title}</h4>
+                    <Dropdown class="custom-select my-1 mr-sm-2" onSelect={handleSelect}>
+                        <Dropdown.Toggle>
+                            Select a Class
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu id="menu">
+                            {classItems}
+                        </Dropdown.Menu>
+                    </Dropdown>
+    
+                    <Slider min={0} max={0} disabled={true} />
+                </div>
             </div>
-        </div>
-    );
+        );
+    } else {
+        return (
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{props.title}</h4>
+                    <Dropdown class="custom-select my-1 mr-sm-2" onSelect={handleSelect}>
+                        <Dropdown.Toggle>
+                            {item}
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu id="menu">
+                            {classItems}
+                        </Dropdown.Menu>
+                    </Dropdown>
+    
+                    <Slider min={classes[item][0]} max={classes[item][1]} />
+                </div>
+            </div>
+        );
+    }
 }
