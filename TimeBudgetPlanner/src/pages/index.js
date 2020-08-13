@@ -3,6 +3,7 @@ import { Dropdown } from "react-bootstrap";
 
 import HSCT from "../components/HSCT";
 import PT from "../components/PT";
+import Necessities from "../components/Necessities";
 
 const IndexPage = () => {
   return (
@@ -11,6 +12,8 @@ const IndexPage = () => {
         <HSCT />
         
         <PT />
+
+        <Necessities />
       </div>
       
 

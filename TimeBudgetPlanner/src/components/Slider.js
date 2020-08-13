@@ -3,12 +3,20 @@ import RangeSlider from 'react-bootstrap-range-slider';
 
 export default function Slider(props) {
     const [ value, setValue ] = React.useState(props.min);
-
+    const updateValue = (e) => {
+        if (e < props.min) {
+            e = props.min
+        } else if (e > props.max) {
+            e = props.max
+        }
+        setValue(e.target.value)
+    }
+    
     if (props.disabled == true){
         return (
             <RangeSlider
-            value={value}
-            onChange={e => setValue(e.target.value)}
+            value={0}
+            onChange={updateValue}
             disabled
             />
         );
@@ -17,7 +25,7 @@ export default function Slider(props) {
             <div>
                 <RangeSlider
                 value={value}
-                onChange={e => setValue(e.target.value)}
+                onChange={updateValue}
                 min={props.min}
                 max={props.max}
                 />
