@@ -1,5 +1,6 @@
 import React from "react"
 import * as CSV from 'csv-string';
+import HSCT from "../components/HSCT";
 
 export default function School(data) {
   let classes = CSV.parse(data.pageContext.data)
@@ -42,6 +43,7 @@ export default function School(data) {
     <div>
       {console.log(classes)}
       <div>Hello</div>
+      <HSCT data = {categorizedClasses} />
     </div>
   )
 } 

@@ -12,20 +12,6 @@ export default function HSCT(props) {
                 <CardDeck 
                     data={props.data}
                 />
-                <CardDeck 
-                    data={{
-                        "History": {"World Cultures": [10, 36], "Other Cls": [4, 16], "Other Cls2": [4, 16]},
-                        "Science": {"Sciency Class": [10, 36], "Other Cls Sci": [4, 16]},
-                        "Math": {"Calc": [10, 36], "Precalc": [4, 16], "IM5": [4, 16]}
-                    }}
-                />
-                <CardDeck 
-                    data={{
-                        "History": {"World Cultures": [10, 36], "Other Cls": [4, 16], "Other Cls2": [4, 16]},
-                        "Science": {"Sciency Class": [10, 36], "Other Cls Sci": [4, 16]},
-                        "Math": {"Calc": [10, 36], "Precalc": [4, 16], "IM5": [4, 16]}
-                    }}
-                />
             </div>
         </div>
     )
