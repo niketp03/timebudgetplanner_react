@@ -8,15 +8,6 @@ import Necessities from "../components/Necessities";
 const IndexPage = () => {
   return (
     <div>
-      <div>
-        <HSCT />
-        
-        <PT />
-
-        <Necessities />
-      </div>
-      
-
       <header class="masthead d-flex" id="headerMaster">
         <inputCard></inputCard>
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>

@@ -20,6 +20,7 @@ export default function Slider(props) {
                 onChange={e => setValue(e.target.value)}
                 min={props.min}
                 max={props.max}
+                step={0.1}
                 />
                 <h3 class="card-text" id="aHours">{value} hours</h3>
             </div>
