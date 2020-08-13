@@ -3,6 +3,7 @@ import * as CSV from 'csv-string';
 import HSCT from "../components/HSCT";
 import PT from "../components/PT"
 import Necessities from "../components/Necessities"
+import { Doughnut } from 'react-chartjs-2';
 
 export default function School(data) {
   let classes = CSV.parse(data.pageContext.data)
@@ -39,7 +40,33 @@ export default function School(data) {
     }
   } 
 
-  console.log(categorizedClasses)
+  let chart_data = {
+    labels: [
+      'Homework',
+      'Sleep',
+      'School Hours',
+      'Job',
+      'Family Time',
+      'Sports and Clubs',
+      'Play Time',
+      'Other',
+      'Down Time'
+    ],
+    datasets: [{
+      data: [300, 50, 100],
+      backgroundColor: [
+        "#3188b9",
+        "#690f77",
+        "#cd382e",
+        "#fca476",
+        "#87d9c0",
+        "#ba67fa",
+        "#3d782f",
+        "#677dde",
+        "#faf172",
+      ]
+    }]
+  };
 
   return (
     <div>
@@ -48,6 +75,7 @@ export default function School(data) {
       <HSCT data = {categorizedClasses} />
       <PT />
       <Necessities />
+      <Doughnut data={chart_data} />
     </div>
   )
 } 
