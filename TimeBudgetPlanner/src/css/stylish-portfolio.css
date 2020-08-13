@@ -380,3 +380,26 @@ a:hover, a:focus, a:active {
     border: none;
     border-bottom: 1px solid black;
 }
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.sticky.sticky-fixed.is-sticky {
+  position: fixed;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.sticky.sticky-fixed.is-sticky:not([style*="margin-top"]) {
+  margin-top: 0 !important;
+}
+.sticky.sticky-fixed.is-sticky:not([style*="margin-bottom"]) {
+  margin-bottom: 0 !important;
+}
+
+.sticky.sticky-fixed.is-absolute{
+  position: absolute;
+}
