@@ -33,7 +33,7 @@ export default function InputCard(props) {
                         </Dropdown.Menu>
                     </Dropdown>
     
-                    <Slider min={0} max={0} disabled={true} />
+                    <Slider min={0} max={0} disabled={true}/>
                 </div>
             </div>
         );
