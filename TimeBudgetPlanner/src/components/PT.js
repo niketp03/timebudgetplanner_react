@@ -12,12 +12,17 @@ export default function PT(props) {
                     data = {{
                         "Athletics": [0, 25],
                         "School Clubs": [0, 25],
-                        "Job": [0, 40],
+                        "Job": [0, 40]
+                    }}
+                />
+                <CardDeck 
+                    sliderOnly={true}
+                    data = {{
                         "Religious Activities": [0, 25],
                         "Community Service": [0, 25],
                         "Other": [0, 25]
                     }}
-                />
+                />                  
             </div>
         </div>
     )

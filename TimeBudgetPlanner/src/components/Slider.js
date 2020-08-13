@@ -1,31 +1,30 @@
 import React from 'react'
 import RangeSlider from 'react-bootstrap-range-slider';
 
-export default function Slider(props) {
-    const [ value, setValue ] = React.useState(props.min);
-    
-    if (props.disabled == true){
-        return (
-            <RangeSlider
-            value={0}
-            onChange={e => setValue(e.target.value)}
-            disabled
-            />
-        );
-    } else {
-        return (
-            <div>
+export default class Slider extends React.Component {
+
+    render() {
+        if (this.props.disabled == true){
+            return (
                 <RangeSlider
-                value={value}
-                onChange={e => setValue(e.target.value)}
-                min={props.min}
-                max={props.max}
-                step={0.1}
+                value={0}
+                onChange={this.props.onChange}
+                disabled
                 />
-                <h3 class="card-text" id="aHours">{value} hours</h3>
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div>
+                    <RangeSlider
+                    value={this.props.value}
+                    onChange={this.props.onChange}
+                    min={this.props.min}
+                    max={this.props.max}
+                    step={0.1}
+                    />
+                    <h3 class="card-text">{this.props.value} hours</h3>
+                </div>
+            );
+        }
     }
-
-
 }
