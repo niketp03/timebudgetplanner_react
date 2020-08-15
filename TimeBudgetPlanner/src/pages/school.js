@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from 'react';
 import * as CSV from 'csv-string';
 import HSCT from "../components/HSCT";
 import PT from "../components/PT"
@@ -43,95 +43,75 @@ export default function School(data) {
   } 
     
   //Handle Charting
-  const getChartState = () => ({
-    labels: [
-      'Homework',
-      'Sleep',
-      'School Hours',
-      'Job',
-      'Family Time',
-      'Sports and Clubs',
-      'Play Time',
-      'Other',
-      'Down Time',
-      'Time Not Used'
-    ],
-    datasets: [{
-      data: [
-        getHomework(),
-        getSleep(),
-        getSchoolHours(),
-        getJob(),
-        getFamilyTime(),
-        getSportsAndClubs(),
-        getPlayTime(),
-        getOther(),
-        getDownTime(),
-        getTimeNotUsed()],
-      backgroundColor: [
-        "#3188b9",
-        "#690f77",
-        "#cd382e",
-        "#fca476",
-        "#87d9c0",
-        "#ba67fa",
-        "#3d782f",
-        "#677dde",
-        "#faf172",
-      ]
-    }]
-  });
-    
-  const getHomework = () => (
-    10
-  );
+  const [chartState, setChartState] = useState(formatChartJSON());
 
-  const getSleep = () => (
-    10
-  );
+  function formatChartJSON(chartData){
+    if(chartData == null){
+      chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
 
-  const getSchoolHours = () => (
-    10
-  );
+    return {
+      labels: [
+        'Homework',
+        'Sleep',
+        'School Hours',
+        'Job',
+        'Family Time',
+        'Sports and Clubs',
+        'Play Time',
+        'Other',
+        'Down Time',
+        'Time Not Used'
+      ],
+      datasets: [{
+        data: chartData,
+        backgroundColor: [
+          "#3188b9",
+          "#690f77",
+          "#cd382e",
+          "#fca476",
+          "#87d9c0",
+          "#ba67fa",
+          "#3d782f",
+          "#677dde",
+          "#faf172",
+        ]
+      }]
+    }
+  }
 
-  const getJob = () => (
-    10
-  );
+  function updateChart(Homework){
+    let chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-  const getFamilyTime = () => (
-    10
-  );
+    if(Homework != null){
+      //Homework
+      let HomeworkSum = 0
+      for (let [k, v] of Object.entries(Homework)) {
+        HomeworkSum = HomeworkSum + parseFloat(v)
+      }
+      chartData[0] = HomeworkSum
+    }
 
-  const getSportsAndClubs = () => (
-    10
-  );
 
-  const getPlayTime = () => (
-    10
-  );
+    for(var i = 0; i < chartData.length; i++){
+      chartData[i] = parseFloat(chartData[i].toFixed(2))
+    }
 
-  const getOther = () => (
-    10
-  );
-
-  const getDownTime = () => (
-    10
-  );
-
-  const getTimeNotUsed = () => (
-    168 - (getHomework() + getSleep() + getSchoolHours() + getJob() + getFamilyTime() + getSportsAndClubs() + getPlayTime() + getDownTime())
-  );
-
-  var chartState = getChartState()
+    console.log(chartData)
+    setChartState(formatChartJSON(chartData))
+  }
 
   return (
     <div>
-      {console.log(classes)}
-      <HSCT data = {categorizedClasses} />
+      <button onClick={() => setChartState()}>
+        Click me
+      </button>
+
+      <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
       <PT />
       <Necessities />
-      <Doughnut  id = 'mainChart' data={chartState} />
+      <Doughnut  id = 'mainChart' data={chartState}/>
       
     </div>
   )
-} 
+}   

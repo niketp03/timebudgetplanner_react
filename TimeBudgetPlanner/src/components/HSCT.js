@@ -10,6 +10,7 @@ export default class HSCT extends React.Component {
         var currentHours = this.state.hourValues;
         currentHours[name] = e.target.value;
         this.setState({hourValues: currentHours})
+        this.props.updateChart(currentHours)
       }
 
     state = {
