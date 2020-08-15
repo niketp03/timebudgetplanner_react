@@ -20,7 +20,7 @@ export default class Slider extends React.Component {
                     onChange={this.props.onChange}
                     min={this.props.min}
                     max={this.props.max}
-                    step={0.1}
+                    step={0.5}
                     />
                     <h3 class="card-text">{this.props.value} hours</h3>
                 </div>
