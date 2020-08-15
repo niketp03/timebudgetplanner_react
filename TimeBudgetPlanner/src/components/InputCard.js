@@ -55,7 +55,7 @@ export default class InputCard extends Component {
                             min={this.props.classes[this.state.item][0]} 
                             max={this.props.classes[this.state.item][1]} 
                             onChange={this.props.onChange.bind(this, this.props.title)}
-                            value={(this.props.value == null) ? 0 : (this.props.value)} 
+                            value={(this.props.value == null) ? (this.props.classes[this.state.item][0]) : (this.props.value)} 
                         />
                     </div>
                 </div>
