@@ -6,6 +6,16 @@ export default class HSCT extends React.Component {
 
     keys = Object.keys(this.props.data)
 
+    handleSelect = (name, value) => {
+        var currentItems = this.state.itemValues;
+        currentItems[name] = value;
+        this.setState({itemValues: currentItems})
+        var currentHours = this.state.hourValues;
+        currentHours[name] = this.props.data[name][value][0];
+        this.setState({hourValues: currentHours})
+        this.props.updateChart(currentHours)
+    }
+
     handleValChangeHSCT = (name, e) => {
         var currentHours = this.state.hourValues;
         currentHours[name] = e.target.value;
@@ -14,7 +24,8 @@ export default class HSCT extends React.Component {
       }
 
     state = {
-        hourValues: {}
+        hourValues: {},
+        itemValues: {}
     }
 
     render(){
@@ -36,11 +47,15 @@ export default class HSCT extends React.Component {
                         data={_.pick(this.props.data, ["History", "English", "Math"])}
                         onChange={this.handleValChangeHSCT}
                         hourValues={this.state.hourValues}
+                        onSelect={this.handleSelect}
+                        itemValues={this.state.itemValues}
                     />
                     <CardDeck 
                         data={_.pick(this.props.data, ["Science", "Foreign Language", "Visual and Performing arts"])}
                         onChange={this.handleValChangeHSCT}
                         hourValues={this.state.hourValues}
+                        onSelect={this.handleSelect}
+                        itemValues={this.state.itemValues}
                     />
                 </div>
             </div>

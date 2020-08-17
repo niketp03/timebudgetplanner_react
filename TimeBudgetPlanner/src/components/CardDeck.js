@@ -17,9 +17,9 @@ export default class CardDeck extends Component {
         }
         return (
             <div class="card-deck">
-                <InputCard title={this.keys[0]} classes={this.props.data[this.keys[0]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[0]]}/>
-                <InputCard title={this.keys[1]} classes={this.props.data[this.keys[1]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[1]]}/>
-                <InputCard title={this.keys[2]} classes={this.props.data[this.keys[2]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[2]]}/>
+                <InputCard title={this.keys[0]} classes={this.props.data[this.keys[0]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[0]]} onSelect={this.props.onSelect} item={this.props.itemValues[this.keys[0]]}/>
+                <InputCard title={this.keys[1]} classes={this.props.data[this.keys[1]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[1]]} onSelect={this.props.onSelect} item={this.props.itemValues[this.keys[1]]}/>
+                <InputCard title={this.keys[2]} classes={this.props.data[this.keys[2]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[2]]} onSelect={this.props.onSelect} item={this.props.itemValues[this.keys[2]]}/>
             </div>
         );
     }
