@@ -14,7 +14,7 @@ export default class InputCardSliderOnly extends Component {
                         onChange={this.props.onChange.bind(this, this.props.title)}
                         value={(this.props.value == null) ? 0 : (this.props.value)}  
                     />
-                    {(this.props.desc != null) && <p>{this.props.data[2]}</p>}
+                    {(this.props.data[2] != null) && <p>{this.props.data[2]}</p>}
                 </div>
             </div>
         );
