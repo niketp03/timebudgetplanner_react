@@ -8,7 +8,7 @@ export default class CardDeck extends Component {
     render() {
         if (this.props.sliderOnly == true){
             return (
-                <div class="card-deck" style={{paddingTop: "1%", paddingBottom: "1%;"}}>
+                <div class="card-deck" style={{paddingTop: "1%", paddingBottom: "1%"}}>
                     <InputCardSliderOnly title={this.keys[0]} data={this.props.data[this.keys[0]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[0]]}/>
                     <InputCardSliderOnly title={this.keys[1]} data={this.props.data[this.keys[1]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[1]]}/>
                     <InputCardSliderOnly title={this.keys[2]} data={this.props.data[this.keys[2]]} onChange={this.props.onChange} value={this.props.hourValues[this.keys[2]]}/>
