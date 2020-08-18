@@ -43,13 +43,12 @@ export default function School(data) {
   } 
     
   //Handle Charting
-  const [chartState, setChartState] = useState(formatChartJSON());
+
+  var chartReference = {}; // Used to force chart update
+  
+  const [chartState, setChartState] = useState(formatChartJSON([0,0,0,0,0,0,0,0,0,168])); //Set initial chart conditions
 
   function formatChartJSON(chartData){
-    if(chartData == null){
-      chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    }
-
     return {
       labels: [
         'Homework',
@@ -80,37 +79,48 @@ export default function School(data) {
     }
   }
 
-  function updateChart(Homework){
-    let chartData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  function updateChart(Homework, PersonalTime){
+    let chartData = chartState.datasets[0].data
 
+    //Update Homework Hours
     if(Homework != null){
-      //Homework
       let HomeworkSum = 0
       for (let [k, v] of Object.entries(Homework)) {
         HomeworkSum = HomeworkSum + parseFloat(v)
       }
       chartData[0] = HomeworkSum
     }
+    
+    //Update Job Hours
+    if(PersonalTime != null){
+      if(PersonalTime['Job'] != null){
+        chartData[3] = parseFloat(PersonalTime['Job'])
+      }
+    }
 
-
+    //Fix float precision errors
     for(var i = 0; i < chartData.length; i++){
       chartData[i] = parseFloat(chartData[i].toFixed(2))
     }
-
-    console.log(chartData)
+     
     setChartState(formatChartJSON(chartData))
+
+    let d = chartReference.chartInstance
+    d.update();
   }
 
   return (
     <div>
-      <button onClick={() => setChartState()}>
-        Click me
-      </button>
-
+      
+      {/* Homework / Study / Class Time */}
       <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
-      <PT />
+
+      {/* Personal Time */}
+      <PT updateChart = {updateChart}/>
+
       <Necessities />
-      <Doughnut  id = 'mainChart' data={chartState}/>
+
+      <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState}/>
       
     </div>
   )
