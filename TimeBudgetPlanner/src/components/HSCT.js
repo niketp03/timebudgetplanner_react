@@ -1,6 +1,7 @@
 import React from 'react'
 import CardDeck from "../components/CardDeck";
 import _ from 'lodash'
+import InputCardSliderOnly from './InputCardSliderOnly';
 
 export default class HSCT extends React.Component {
 
@@ -42,7 +43,12 @@ export default class HSCT extends React.Component {
                     <h2 class="text-secondary mb-0">Homework/Study/Class Time</h2>
                     <h4>Please leave it as "Choose..." if you do not have a class in that section. All hours are listed per 7-day week.</h4>
                     <h5>Hours are teacher reported and averaged. You cannot select a lower amount than the average.</h5>
-                    
+                    <InputCardSliderOnly 
+                        title={"Hours per week in school"} 
+                        data={[0, 60]} 
+                        onChange={this.handleValChangeHSCT} 
+                        value={this.state.hourValues["Hours per week in school"]} 
+                    />
                     <CardDeck 
                         data={_.pick(this.props.data, ["History", "English", "Math"])}
                         onChange={this.handleValChangeHSCT}
@@ -52,6 +58,13 @@ export default class HSCT extends React.Component {
                     />
                     <CardDeck 
                         data={_.pick(this.props.data, ["Science", "Foreign Language", "Visual and Performing arts"])}
+                        onChange={this.handleValChangeHSCT}
+                        hourValues={this.state.hourValues}
+                        onSelect={this.handleSelect}
+                        itemValues={this.state.itemValues}
+                    />
+                    <CardDeck 
+                        data={_.pick(this.props.data, ["College Prep Elective", "Extra Class 1", "Extra Class 2"])}
                         onChange={this.handleValChangeHSCT}
                         hourValues={this.state.hourValues}
                         onSelect={this.handleSelect}
