@@ -79,23 +79,46 @@ export default function School(data) {
     }
   }
 
-  function updateChart(Homework, PersonalTime){
+  function updateChart(Homework, PersonalTime, Necessities){
     let chartData = chartState.datasets[0].data
-
+    
     //Update Homework Hours
     if(Homework != null){
       let HomeworkSum = 0
       for (let [k, v] of Object.entries(Homework)) {
         HomeworkSum = HomeworkSum + parseFloat(v)
       }
+
       chartData[0] = HomeworkSum
     }
     
+    //Update Sleep Hours
+    if(Necessities != null){
+      if(Necessities['Sleep'] != null){
+        chartData[1] = parseFloat(Necessities['Sleep'])
+      }
+    }
+
     //Update Job Hours
     if(PersonalTime != null){
       if(PersonalTime['Job'] != null){
         chartData[3] = parseFloat(PersonalTime['Job'])
       }
+    }
+
+    //Update Sports and Clubs
+    if(PersonalTime != null){
+      let tmp = 0
+
+      if(PersonalTime['Athletics'] != null){
+        tmp += parseFloat(PersonalTime['Athletics'])
+      }
+
+      if(PersonalTime['School Clubs'] != null){
+        tmp += parseFloat(PersonalTime['School Clubs'])
+      }
+
+      chartData[5] = tmp
     }
 
     //Fix float precision errors
@@ -118,7 +141,7 @@ export default function School(data) {
       {/* Personal Time */}
       <PT updateChart = {updateChart}/>
 
-      <Necessities />
+      <Necessities updateChart = {updateChart}/>
 
       <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState}/>
       

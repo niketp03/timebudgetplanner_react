@@ -7,6 +7,7 @@ export default class Necessities extends React.Component {
         var currentHours = this.state.hourValues;
         currentHours[name] = e.target.value;
         this.setState({hourValues: currentHours})
+        this.props.updateChart(null, null, currentHours)
       }
 
     state = {
