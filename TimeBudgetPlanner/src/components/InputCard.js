@@ -21,14 +21,13 @@ export default class InputCard extends Component {
         if (this.props.item == null){
             return (
                 <div class="card">
-                    
                     <div class="card-body">
                         <h4 class="card-title">{this.props.title}</h4>
-                        <Dropdown class="custom-select my-1 mr-sm-2" onSelect={this.props.onSelect.bind(this, this.props.title)}>
+                        <Dropdown class="custom-select my-1 mr-sm-2" onSelect={this.props.onSelect.bind(this, this.props.title)} >
                             <Dropdown.Toggle>
                                 Select a Class
                             </Dropdown.Toggle>
-                            <Dropdown.Menu id="menu">
+                            <Dropdown.Menu>
                                 {classItems}
                             </Dropdown.Menu>
                         </Dropdown>

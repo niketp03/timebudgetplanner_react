@@ -27,6 +27,12 @@ body {
   font-size: 3rem;
 }
 
+.dropdown-menu {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+
 .content-section-heading h3 {
   font-size: 1rem;
   text-transform: uppercase;
