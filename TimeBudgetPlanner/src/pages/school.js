@@ -46,7 +46,7 @@ export default function School(data) {
 
   var chartReference = {}; // Used to force chart update
   
-  const [chartState, setChartState] = useState(formatChartJSON([0,0,0,0,0,0,0,0,0,0,168])); //Set initial chart conditions
+  const [chartState, setChartState] = useState(formatChartJSON([0,49,0,0,0,0,0,0,0,0,168])); //Set initial chart conditions
 
   function formatChartJSON(chartData){
     return {

@@ -1,13 +1,11 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
-
-import HSCT from "../components/HSCT";
-import PT from "../components/PT";
-import Necessities from "../components/Necessities";
+import Printable from '../components/Printable';
 
 const IndexPage = () => {
   return (
     <div>
+      <Printable />
       <header class="masthead d-flex" id="headerMaster">
         <inputCard></inputCard>
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>

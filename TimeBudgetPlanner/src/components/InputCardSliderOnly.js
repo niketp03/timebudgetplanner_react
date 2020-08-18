@@ -12,7 +12,7 @@ export default class InputCardSliderOnly extends Component {
                         min={this.props.data[0]} 
                         max={this.props.data[1]} 
                         onChange={this.props.onChange.bind(this, this.props.title)}
-                        value={(this.props.value == null) ? 0 : (this.props.value)}  
+                        value={(this.props.value == null) ? (this.props.data[0]) : (this.props.value)}  
                     />
                     {(this.props.data[2] != null) && <p>{this.props.data[2]}</p>}
                 </div>

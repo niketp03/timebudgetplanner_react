@@ -23,7 +23,7 @@ export default class PT extends React.Component {
                     <CardDeck 
                         sliderOnly={true}
                         data = {{
-                            "Athletics": [0, 25, "test of desc"],
+                            "Athletics": [0, 25],
                             "School Clubs": [0, 25],
                             "Job": [0, 40]
                         }}
