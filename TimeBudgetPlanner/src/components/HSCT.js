@@ -63,6 +63,13 @@ export default class HSCT extends React.Component {
                         onSelect={this.handleSelect}
                         itemValues={this.state.itemValues}
                     />
+                    <CardDeck 
+                        data={_.pick(this.props.data, ["College Prep Elective", "Extra Class 1", "Extra Class 2"])}
+                        onChange={this.handleValChangeHSCT}
+                        hourValues={this.state.hourValues}
+                        onSelect={this.handleSelect}
+                        itemValues={this.state.itemValues}
+                    />
                 </div>
             </div>
         )
