@@ -46,7 +46,7 @@ export default function School(data) {
 
   var chartReference = {}; // Used to force chart update
   
-  const [chartState, setChartState] = useState(formatChartJSON([0,0,0,0,0,0,0,0,0,168])); //Set initial chart conditions
+  const [chartState, setChartState] = useState(formatChartJSON([0,0,0,0,0,0,0,0,0,0,168])); //Set initial chart conditions
 
   function formatChartJSON(chartData){
     return {
@@ -58,8 +58,9 @@ export default function School(data) {
         'Family Time',
         'Sports and Clubs',
         'Play Time',
-        'Other',
         'Down Time',
+        'Other Necessities',
+        'Other Personal Time',
         'Time Not Used'
       ],
       datasets: [{
@@ -72,8 +73,9 @@ export default function School(data) {
           "#87d9c0",
           "#ba67fa",
           "#3d782f",
+          "#4DB6AC",
           "#677dde",
-          "#faf172",
+          "#faf172"
         ]
       }]
     }
@@ -106,6 +108,13 @@ export default function School(data) {
       }
     }
 
+    //Update Family Time Hours
+    if(Necessities != null){
+      if(Necessities['Family Time'] != null){
+        chartData[4] = parseFloat(Necessities['Family Time'])
+      }
+    }
+    
     //Update Sports and Clubs
     if(PersonalTime != null){
       let tmp = 0
@@ -120,6 +129,61 @@ export default function School(data) {
 
       chartData[5] = tmp
     }
+
+    //Update Play Time Hours
+    if(Necessities != null){
+      if(Necessities['Play Time'] != null){
+        chartData[6] = parseFloat(Necessities['Play Time'])
+      }
+    }
+
+    //Update Down Time Hours
+    if(Necessities != null){
+      if(Necessities['Down Time'] != null){
+        chartData[7] = parseFloat(Necessities['Down Time'])
+      }
+    }
+
+    //Update Other Necessities
+    if (Necessities != null){
+      var tmp = 0
+
+      if(Necessities['Necessities'] != null){
+        tmp += parseFloat(Necessities['Necessities'])
+      }
+      
+      if(Necessities['Other'] != null){
+        tmp += parseFloat(Necessities['Other'])
+      }        
+
+      chartData[8] = tmp
+    }
+
+    //Update Other Personal Time
+    if (PersonalTime != null){
+      var tmp = 0
+
+      if(PersonalTime['Religious Activities'] != null){
+        tmp += parseFloat(PersonalTime['Religious Activities'])
+      }
+
+      if(PersonalTime['Community Service'] != null){
+        tmp += parseFloat(PersonalTime['Community Service'])
+      }
+      
+      if(PersonalTime['Other'] != null){
+        tmp += parseFloat(PersonalTime['Other'])
+      }        
+
+      chartData[9] = tmp
+    }
+
+    //Update Time Left Over
+    var timeSum = 0
+    for(var i = 0; i < chartData.length - 1; i++){
+      timeSum += chartData[i]
+    }
+    chartData[10] = 168 - timeSum
 
     //Fix float precision errors
     for(var i = 0; i < chartData.length; i++){
