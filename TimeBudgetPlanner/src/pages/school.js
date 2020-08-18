@@ -19,7 +19,8 @@ export default function School(data) {
     'e' : 'Foreign Language',
     'f' : 'Visual and Performing arts',
     'g' : 'College Prep Elective',
-    'o' : 'Other'
+    'o' : 'Extra Class 1',
+    'o2' : 'Extra Class 2'
   }
 
   let categorizedClasses = {
@@ -30,7 +31,8 @@ export default function School(data) {
     "Foreign Language": {},
     "Visual and Performing arts": {},
     "College Prep Elective": {},
-    "Other": {}
+    "Extra Class 1": {},
+    'Extra Class 2': {}
   }
   
   for (var i = 0; i < classes.length; i++) { 
@@ -39,6 +41,7 @@ export default function School(data) {
     for (var j = 0; j < cats.length; j++) {
       categorizedClasses[charToCat[cats[j]]][class_[0]] = [class_[1],class_[2]]
       categorizedClasses[charToCat['o']][class_[0]] = [class_[1],class_[2]]
+      categorizedClasses[charToCat['o2']][class_[0]] = [class_[1],class_[2]]
     }
   } 
     
