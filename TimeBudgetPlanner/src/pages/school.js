@@ -88,7 +88,17 @@ export default function School(data) {
     }
   }
 
-  function updateChart(Homework, PersonalTime, Necessities){
+  const Homework_ = {};
+  const PersonalTime_ = {};
+  const Necessities_ = {};
+  const Classes_ = {};
+
+  function updateChart(Homework, PersonalTime, Necessities, Classes){
+    Homework_ = Homework;
+    PersonalTime_ = PersonalTime;
+    Necessities_ = Necessities;
+    Classes_ = Classes;
+
     let chartData = chartState.datasets[0].data
     
     //Update Homework Hours and School Hours
