@@ -80,18 +80,26 @@ export default function School(data) {
           "#677dde",
           "#faf172"
         ]
-      }]
+      }],
+      options: {
+        responsive: false,
+        maintainAspectRatio: true
+      }
     }
   }
 
   function updateChart(Homework, PersonalTime, Necessities){
     let chartData = chartState.datasets[0].data
     
-    //Update Homework Hours
+    //Update Homework Hours and School Hours
     if(Homework != null){
       let HomeworkSum = 0
       for (let [k, v] of Object.entries(Homework)) {
-        HomeworkSum = HomeworkSum + parseFloat(v)
+        if(k != 'Hours per week in school'){
+          HomeworkSum = HomeworkSum + parseFloat(v)
+        }else{
+          chartData[2] = parseFloat(v)
+        }
       }
 
       chartData[0] = HomeworkSum
@@ -199,6 +207,14 @@ export default function School(data) {
     d.update();
   }
 
+  let chartHeight = 0
+
+  if(window.screen.width < 500){
+    chartHeight = 600
+  }else{
+    chartHeight = 175
+  }
+
   return (
     <div>
       {/* Homework / Study / Class Time */}
@@ -209,9 +225,11 @@ export default function School(data) {
 
       <Necessities updateChart = {updateChart}/>
 
-      <div class="container">
-        <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState}/>
+      <div class = "container">
+        <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
+
+      {console.log(chartHeight)}
     </div>
   )
 }   
