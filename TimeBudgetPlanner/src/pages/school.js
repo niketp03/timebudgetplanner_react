@@ -49,7 +49,7 @@ export default function School(data) {
 
   var chartReference = {}; // Used to force chart update
   
-  const [chartState, setChartState] = useState(formatChartJSON([0,49,0,0,0,0,0,0,0,0,119])); //Set initial chart conditions
+  const [chartState, setChartState] = useState(formatChartJSON([0,63,0,0,0,0,0,0,0,0,119])); //Set initial chart conditions
 
   function formatChartJSON(chartData){
     return {
@@ -201,7 +201,6 @@ export default function School(data) {
 
   return (
     <div>
-      
       {/* Homework / Study / Class Time */}
       <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
 
@@ -210,8 +209,9 @@ export default function School(data) {
 
       <Necessities updateChart = {updateChart}/>
 
-      <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState}/>
-      
+      <div class="container">
+        <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState}/>
+      </div>
     </div>
   )
 }   

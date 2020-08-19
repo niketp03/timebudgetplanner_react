@@ -11,7 +11,7 @@ export default class Necessities extends React.Component {
       }
 
     state = {
-        hourValues: {}
+        hourValues: {"Sleep": 63}
     }
     render() {
         return (
