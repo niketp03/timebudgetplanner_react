@@ -22,7 +22,7 @@ export default class Slider extends React.Component {
                     max={this.props.max}
                     step={0.5}
                     />
-                    <h3 class="card-text">{this.props.value} hours</h3>
+                    <h3 class="card-text">{parseFloat(this.props.value).toFixed(1)} hours</h3>
                 </div>
             );
         }
