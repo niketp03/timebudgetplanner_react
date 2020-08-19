@@ -203,11 +203,18 @@ export default function School(data) {
     }
 
     //Update Time Left Over
-    setTimeSum(0)
+    let timeSumTmp = 0
     for(var i = 0; i < chartData.length - 1; i++){
-      setTimeSum(timeSum + chartData[i])
+      timeSumTmp = timeSumTmp + chartData[i]
     }
-    chartData[10] = 168 - timeSum
+    setTimeSum(timeSumTmp)
+
+    if(168 - timeSumTmp > 0){
+      chartData[10] = 168 - timeSumTmp
+    }else{
+      chartData[10] = 0
+    }
+    
 
     //Fix float precision errors
     for(var i = 0; i < chartData.length; i++){
@@ -218,6 +225,8 @@ export default function School(data) {
 
     let d = chartReference.chartInstance
     d.update();
+
+    console.log(timeSum)
   }
 
   let chartHeight = 0
@@ -242,8 +251,6 @@ export default function School(data) {
         {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
         <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
-
-      {console.log(chartHeight)}
     </div>
   )
 }   
