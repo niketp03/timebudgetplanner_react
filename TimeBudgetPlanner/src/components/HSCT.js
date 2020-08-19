@@ -14,7 +14,7 @@ export default class HSCT extends React.Component {
         var currentHours = this.state.hourValues;
         currentHours[name] = this.props.data[name][value][0];
         this.setState({hourValues: currentHours})
-        this.props.updateChart(currentHours, null, null)
+        this.props.updateChart(currentHours, null, null, currentItems)
     }
 
     handleValChangeHSCT = (name, e) => {
