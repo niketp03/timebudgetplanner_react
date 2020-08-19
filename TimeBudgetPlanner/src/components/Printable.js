@@ -5,8 +5,9 @@ export default class Printable extends Component {
         return (
             <div class="container"   style={{display: "block"}}>
                 <div class="content-section-heading text-center">
-                    <h2 class="text-secondary mb-0">Homework/Study/Class Time</h2>
+                    <h2 class="text-secondary mb-0">Homework and Class Time</h2>
 
+                    <h5>Time in School: 35 Hours</h5>
                     <div class="row">
                         <div class="col-sm-4">
                             <h5>History: {}</h5>
@@ -20,8 +21,8 @@ export default class Printable extends Component {
                         </div>
                         <div class="col-sm-4">
                             <h5>College Prep Elective: None</h5>
-                            <h5>Other: None</h5>
-                            <h5>Time in School: 6 Classes - 35 Hours</h5>
+                            <h5>Extra Class 1: None</h5>
+                            <h5>Extra Class 2: None</h5>
                         </div>
                         <h5>Total Hours: 35 Hours</h5>
                     </div>
