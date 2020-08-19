@@ -4,8 +4,11 @@ import HSCT from "../components/HSCT";
 import PT from "../components/PT"
 import Necessities from "../components/Necessities"
 import { Doughnut } from 'react-chartjs-2';
+import { Alert } from 'react-bootstrap';
 
 export default function School(data) {
+
+  const [timeSum, setTimeSum] = useState(0)
 
   //Parse CSV into classes
   let classes = CSV.parse(data.pageContext.data)
@@ -88,10 +91,10 @@ export default function School(data) {
     }
   }
 
-  const Homework_ = {};
-  const PersonalTime_ = {};
-  const Necessities_ = {};
-  const Classes_ = {};
+  let Homework_ = {};
+  let PersonalTime_ = {};
+  let Necessities_ = {};
+  let Classes_ = {};
 
   function updateChart(Homework, PersonalTime, Necessities, Classes){
     Homework_ = Homework;
@@ -200,9 +203,9 @@ export default function School(data) {
     }
 
     //Update Time Left Over
-    var timeSum = 0
+    setTimeSum(0)
     for(var i = 0; i < chartData.length - 1; i++){
-      timeSum += chartData[i]
+      setTimeSum(timeSum + chartData[i])
     }
     chartData[10] = 168 - timeSum
 
@@ -236,6 +239,7 @@ export default function School(data) {
       <Necessities updateChart = {updateChart}/>
 
       <div class = "container">
+        {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
         <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
 
