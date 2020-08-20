@@ -5,9 +5,7 @@ import Printable from '../components/Printable';
 const IndexPage = () => {
   return (
     <div>
-      <Printable />
       <header class="masthead d-flex" id="headerMaster">
-        <inputCard></inputCard>
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>
           <h1 class="mb-1" style={{"paddingBottom": "100px"}}>Time Budget Planner</h1>
           <Dropdown id="schoolSelect" style={{"paddingBottom": "100px"}}>
