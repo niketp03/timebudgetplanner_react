@@ -7,7 +7,11 @@ export default class InputCardSliderOnly extends Component {
         return (
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">{this.props.title}</h4>
+                    <div class="d-flex justify-content-center">
+                        <h4 class="card-title">{this.props.title}</h4>
+                        {(this.props.data[3] != null) && /*BUTTON_HERE REMOVE P*/<p>test</p>}
+                    </div>
+                     
                     <Slider 
                         min={this.props.data[0]} 
                         max={this.props.data[1]} 
