@@ -8,8 +8,7 @@ export default class InputCardSliderOnly extends Component {
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-center">
-                        <h4 class="card-title">{this.props.title}</h4>
-                        {(this.props.data[3] != null) && /*BUTTON_HERE REMOVE P*/<p>test</p>}
+                        {(this.props.data[3] != null) ? <a target="_blank" title="Watch a video to learn more" href={this.props.data[3]}><h4 class="card-title">{this.props.title}</h4></a> : <h4 class="card-title">{this.props.title}</h4>}
                     </div>
                      
                     <Slider 
