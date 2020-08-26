@@ -1,52 +1,14 @@
 import React, { useState } from 'react';
 import * as CSV from 'csv-string';
-import HSCT from "../components/HSCT";
+import HSCTGeneric from "../components/HSCTGeneric";
 import PT from "../components/PT"
 import Necessities from "../components/Necessities"
 import { Doughnut } from 'react-chartjs-2';
 import { Alert } from 'react-bootstrap';
 
-export default function School(data) {
+export default function SchoolGen() {
 
   const [timeSum, setTimeSum] = useState(0)
-
-  //Parse CSV into classes
-  let classes = CSV.parse(data.pageContext.data)
-  classes = classes.slice(1)
-
-  const charToCat = {
-    'a' : 'History',
-    'b' : 'English',
-    'c' : 'Math',
-    'd' : 'Science',
-    'e' : 'Foreign Language',
-    'f' : 'Visual and Performing arts',
-    'g' : 'College Prep Elective',
-    'o' : 'Extra Class 1',
-    'o2' : 'Extra Class 2'
-  }
-
-  let categorizedClasses = {
-    "History": {},
-    "English": {},
-    "Math": {},
-    "Science": {},
-    "Foreign Language": {},
-    "Visual and Performing arts": {},
-    "College Prep Elective": {},
-    "Extra Class 1": {},
-    'Extra Class 2': {}
-  }
-  
-  for (var i = 0; i < classes.length; i++) { 
-    let class_ = classes[i]
-    let cats = class_[3].split('')
-    for (var j = 0; j < cats.length; j++) {
-      categorizedClasses[charToCat[cats[j]]][class_[0]] = [class_[1],class_[2]]
-      categorizedClasses[charToCat['o']][class_[0]] = [class_[1],class_[2]]
-      categorizedClasses[charToCat['o2']][class_[0]] = [class_[1],class_[2]]
-    }
-  } 
     
   //Handle Charting
 
@@ -238,7 +200,7 @@ export default function School(data) {
   return (
     <div>
       {/* Homework / Study / Class Time */}
-      <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
+      <HSCTGeneric updateChart = {updateChart}/>
 
       {/* Personal Time */}
       <PT updateChart = {updateChart}/>
