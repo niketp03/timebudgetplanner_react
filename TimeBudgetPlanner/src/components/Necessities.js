@@ -22,7 +22,7 @@ export default class Necessities extends React.Component {
                     <CardDeck 
                         sliderOnly={true}
                         data = {{
-                            "Sleep": [49, 70, "Preset at 7 hours of sleep a night however 9 hours is highly recommended for high school teens", "https://www.google.com"],
+                            "Sleep": [49, 70, "Preset at 7 hours of sleep a night however 9 hours is highly recommended for high school teens", "https://www.loom.com/share/25b369a3ae7941c29f24386d02208278"],
                             "Necessities": [0, 25, "Eating, showering, chores, etc."],
                             "Down Time": [0, 25, "Meditation, transportation, etc."]
                         }}
@@ -34,7 +34,7 @@ export default class Necessities extends React.Component {
                         sliderOnly={true}
                         data = {{
                             "Family Time": [0, 25],
-                            "Play Time": [0, 25, "Social media, Movies/TV, Video Games"],
+                            "Play Time": [0, 25, "Social media, Movies/TV, Video Games", "https://www.loom.com/share/581d2ae0c67e4635a1941f8b3296e9d3"],
                             "Other": [0, 25]
                         }}
                         onChange={this.handleValChange}
