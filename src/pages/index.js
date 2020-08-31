@@ -1,12 +1,16 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import Printable from '../components/Printable';
+import { Helmet } from "react-helmet"
 
 const IndexPage = () => {
   return (
     <div>
 
-      
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Time Budget Planner</title>       
+      </Helmet>
 
       <header class="masthead d-flex" id="headerMaster">
         <div class="container text-center my-auto" style={{backgroundSize: "cover cover"}}>

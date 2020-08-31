@@ -5,6 +5,7 @@ import PT from "./PT"
 import Necessities from "./Necessities"
 import { Doughnut } from 'react-chartjs-2';
 import { Alert } from 'react-bootstrap';
+import { Helmet } from "react-helmet"
 
 export default function School(data) {
 
@@ -231,6 +232,12 @@ export default function School(data) {
 
   return (
     <div>
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Time Budget Planner</title>       
+      </Helmet>
+
       {/* Homework / Study / Class Time */}
       <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
 
