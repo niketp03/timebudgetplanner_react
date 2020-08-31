@@ -189,13 +189,7 @@ export default function SchoolGen() {
     d.update();
   }
 
-  let chartHeight = 0
-
-  if(window.screen.width < 500){
-    chartHeight = 600
-  }else{
-    chartHeight = 175
-  }
+  let chartHeight = 175
 
   return (
     <div>

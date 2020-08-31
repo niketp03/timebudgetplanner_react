@@ -47,7 +47,7 @@ exports.createPages = async ({ graphql, actions, getNode }) => {
 
         await createPage({
             path: pNode.fields.slug,
-            component: path.resolve(`./src/pages/school.js`),
+            component: path.resolve(`./src/components/school.js`),
             context: {
               data: pNode.internal.content,
               slug: pNode.fields.slug,

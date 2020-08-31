@@ -23,7 +23,7 @@ export default class InputCard extends Component {
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">{this.props.title}</h4>
-                        <Dropdown class="custom-select my-1 mr-sm-2" onSelect={this.props.onSelect.bind(this, this.props.title)} >
+                        <Dropdown  onSelect={this.props.onSelect.bind(this, this.props.title)} >
                             <Dropdown.Toggle>
                                 Select a Class
                             </Dropdown.Toggle>
@@ -41,7 +41,7 @@ export default class InputCard extends Component {
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">{this.props.title}</h4>
-                        <Dropdown class="custom-select my-1 mr-sm-2" onSelect={this.props.onSelect.bind(this, this.props.title)}>
+                        <Dropdown  onSelect={this.props.onSelect.bind(this, this.props.title)}>
                             <Dropdown.Toggle>
                                 {this.props.item}
                             </Dropdown.Toggle>

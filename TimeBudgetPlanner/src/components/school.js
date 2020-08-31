@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import * as CSV from 'csv-string';
-import HSCT from "../components/HSCT";
-import PT from "../components/PT"
-import Necessities from "../components/Necessities"
+import HSCT from "./HSCT";
+import PT from "./PT"
+import Necessities from "./Necessities"
 import { Doughnut } from 'react-chartjs-2';
 import { Alert } from 'react-bootstrap';
 
@@ -227,13 +227,7 @@ export default function School(data) {
     d.update();
   }
 
-  let chartHeight = 0
-
-  if(window.screen.width < 500){
-    chartHeight = 600
-  }else{
-    chartHeight = 175
-  }
+  let chartHeight = 175
 
   return (
     <div>
