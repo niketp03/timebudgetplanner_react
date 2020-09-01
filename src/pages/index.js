@@ -22,6 +22,8 @@ const IndexPage = () => {
             <Dropdown.Menu>
               <Dropdown.Item href="/fhs" value="fhs">Folsom High School</Dropdown.Item>
               <Dropdown.Item href="/chs" value="chs">Cordova High School</Dropdown.Item>
+              <Dropdown.Divider />
+              <Dropdown.Item href="/school-gen" value="school-gen">Non-Affliated School</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
