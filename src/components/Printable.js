@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class Printable extends Component {
-    
+
     state = {
         value: this.props
     };
@@ -13,27 +13,31 @@ export default class Printable extends Component {
       }
 
     render() {
+        (this.props.hours == null) ? (this.hours = {}) : (this.hours = this.props.hours);
+        (this.props.names == null) ? (this.names = {}) : (this.names = this.props.names);
+        (this.props.personalTime == null) ? (this.personalTime = {}) : (this.personalTime = this.props.personalTime);
+        (this.props.necessities == null) ? (this.necessities = {}) : (this.necessities = this.props.necessities);
         return (
             <div class="container"   style={{display: "block"}}>
                 <div class="content-section-heading text-center">
                     <h2 class="text-secondary mb-0">Homework and Class Time</h2>
 
-                    <h5>Time in School: {("Hours per week in school" in this.props.hours) ? this.props.hours["Hours per week in school"] + " hours" : "None"}</h5>
+                    <h5>Time in School: {("Hours per week in school" in this.hours) ? this.hours["Hours per week in school"] + " hours" : "None"}</h5>
                     <div class="row">
                         <div class="col-sm-4">
-                            <h5>History: {("History" in this.props.names && "History" in this.props.hours) ? this.props.names["History"] + " - " + this.props.hours["History"] + " hours" : "None"}</h5>
-                            <h5>English: {("English" in this.props.names && "English" in this.props.hours) ? this.props.names["English"] + " - " + this.props.hours["English"] + " hours": "None"}</h5>
-                            <h5>Mathematics: {("Mathematics" in this.props.names && "Mathematics" in this.props.hours) ? this.props.names["Mathematics"] + " - " + this.props.hours["Mathematics"] + " hours": "None"}</h5>
+                            <h5>History: {("History" in this.names && "History" in this.hours) ? this.names["History"] + " - " + this.hours["History"] + " hours" : "None"}</h5>
+                            <h5>English: {("English" in this.names && "English" in this.hours) ? this.names["English"] + " - " + this.hours["English"] + " hours": "None"}</h5>
+                            <h5>Math: {("Math" in this.names && "Math" in this.hours) ? this.names["Math"] + " - " + this.hours["Math"] + " hours": "None"}</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5>Science: {("Science" in this.props.names && "Science" in this.props.hours) ? this.props.names["Science"] + " - " + this.props.hours["Science"] + " hours": "None"}</h5>
-                            <h5>World Language: {("World Language" in this.props.names && "World Language" in this.props.hours) ? this.props.names["World Language"] + " - " + this.props.hours["World Language"] + " hours": "None"}</h5>
-                            <h5>Visual and Performing Arts: {("Visual and Performing Arts" in this.props.names && "Visual and Performing Arts" in this.props.hours) ? this.props.names["Visual and Performing Arts"] + " - " + this.props.hours["Visual and Performing Arts"] + " hours": "None"}</h5>
+                            <h5>Science: {("Science" in this.names && "Science" in this.hours) ? this.names["Science"] + " - " + this.hours["Science"] + " hours": "None"}</h5>
+                            <h5>Foreign Language: {("Foreign Language" in this.names && "Foreign Language" in this.hours) ? this.names["Foreign Language"] + " - " + this.hours["Foreign Language"] + " hours": "None"}</h5>
+                            <h5>Visual and Performing arts: {("Visual and Performing arts" in this.names && "Visual and Performing arts" in this.hours) ? this.names["Visual and Performing arts"] + " - " + this.hours["Visual and Performing arts"] + " hours": "None"}</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5>College Prep Elective: {("College Prep Elective" in this.props.names && "College Prep Elective" in this.props.hours) ? this.props.names["College Prep Elective"] + " - " + this.props.hours["College Prep Elective"] + " hours": "None"}</h5>
-                            <h5>Extra Class 1: {("Extra Class 1" in this.props.names && "Extra Class 1" in this.props.hours) ? this.props.names["Extra Class 1"] + " - " + this.props.hours["Extra Class 1"] + " hours": "None"}</h5>
-                            <h5>Extra Class 2: {("Extra Class 2" in this.props.names && "Extra Class 2" in this.props.hours) ? this.props.names["Extra Class 2"] + " - " + this.props.hours["Extra Class 2"] + " hours": "None"}</h5>
+                            <h5>College Prep Elective: {("College Prep Elective" in this.names && "College Prep Elective" in this.hours) ? this.names["College Prep Elective"] + " - " + this.hours["College Prep Elective"] + " hours": "None"}</h5>
+                            <h5>Extra Class 1: {("Extra Class 1" in this.names && "Extra Class 1" in this.hours) ? this.names["Extra Class 1"] + " - " + this.hours["Extra Class 1"] + " hours": "None"}</h5>
+                            <h5>Extra Class 2: {("Extra Class 2" in this.names && "Extra Class 2" in this.hours) ? this.names["Extra Class 2"] + " - " + this.hours["Extra Class 2"] + " hours": "None"}</h5>
                         </div>
 
                     </div>
@@ -42,40 +46,39 @@ export default class Printable extends Component {
 
                     <div class="row">
                         <div class="col-sm-4">
-                            <h4>Athletics - 0 Hours</h4>
-                            <h4>Religious - 0 Hours</h4>
+                            <h4>Athletics: {("Athletics" in this.personalTime) ? this.personalTime["Athletics"] + " hours" : "0 hours"}</h4>
+                            <h4>Religious Activities: {("Religious Activities" in this.personalTime) ? this.personalTime["Religious Activities"] + " hours" : "0 hours"}</h4>
                         </div>
                         <div class="col-sm-4">
-                            <h4>School Clubs - 0 Hours</h4>
-                            <h4>Community Service - 0 Hours</h4>
+                            <h4>School Clubs: {("School Clubs" in this.personalTime) ? this.personalTime["School Clubs"] + " hours" : "0 hours"}</h4>
+                            <h4>Community Service: {("Community Service" in this.personalTime) ? this.personalTime["Community Service"] + " hours" : "0 hours"}</h4>
                         </div>
                         <div class="col-sm-4">
-                            <h4>Job - 0 Hours</h4>
-                            <h4>Other - 0 Hours</h4>
+                            <h4>Job: {("Job" in this.personalTime) ? this.personalTime["Job"] + " hours" : "0 hours"}</h4>
+                            <h4>Other: {("Other" in this.personalTime) ? this.personalTime["Other"] + " hours" : "0 hours"}</h4>
                         </div>
-                        <h5>Total Hours: 0 Hours</h5>
                     </div>
 
                     <h2 class="text-secondary mb-0">Necessities</h2>
 
                     <div class="row">
                         <div class="col-sm-4">
-                            <h4>Sleep - 49 Hours</h4>
-                            <h4>Family - 0 Hours</h4>
+                            <h4>Sleep: {("Sleep" in this.necessities) ? this.necessities["Sleep"] + " hours" : "63 hours"}</h4>
+                            <h4>Family Time: {("Family Time" in this.necessities) ? this.necessities["Family Time"] + " hours" : "0 hours"}</h4>
                         </div>
                         <div class="col-sm-4">
-                            <h4>Necessities - 0 Hours</h4>
-                            <h4>Play Time - 0 Hours</h4>
+                            <h4>Necessities: {("Necessities" in this.necessities) ? this.necessities["Necessities"] + " hours" : "0 hours"}</h4>
+                            <h4>Play Time: {("Play Time" in this.necessities) ? this.necessities["Play Time"] + " hours" : "0 hours"}</h4>
                         </div>
                         <div class="col-sm-4">
-                            <h4>Down Time - 0 Hours</h4>
-                            <h4>Other - 0 Hours</h4>
+                            <h4>Down Time: {("Down Time" in this.necessities) ? this.necessities["Down Time"] + " hours" : "0 hours"}</h4>
+                            <h4>Other: {("Other" in this.necessities) ? this.necessities["Other"] + " hours" : "0 hours"}</h4>
                         </div>
-                        <h5>Total Hours: 49 Hours</h5>
+
                     </div>
 
 
-                    <div   style={{display: "block"}}>
+                    <div>
                         <h3>Student Signature_______________________________________</h3>
                         <h3>Parent Signature________________________________________</h3>
                         <h3>Date________________</h3>
