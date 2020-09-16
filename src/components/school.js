@@ -12,11 +12,13 @@ let Homework_ = {};
 let PersonalTime_ = {};
 let Necessities_ = {};
 let Classes_ = {};
-let updatePrint = false;
 
 export default function School(data) {
 
   const [timeSum, setTimeSum] = useState(0)
+
+  const [showPrint, setShowPrint] = useState(false)
+  const [showInteractive, setShowInteractive] = useState(true)
 
   //Parse CSV into classes
   let classes = CSV.parse(data.pageContext.data)
@@ -232,6 +234,11 @@ export default function School(data) {
 
   let chartHeight = 175
 
+  var updatePrintFunction = () => {
+    setShowPrint(true)
+    setShowInteractive(false)
+  }
+
   return (
     <div>
 
@@ -240,24 +247,32 @@ export default function School(data) {
         <title>Time Budget Planner</title>       
       </Helmet>
 
-      {/* Homework / Study / Class Time */}
+      { showInteractive ? 
       <HSCT data = {categorizedClasses} updateChart = {updateChart}/>
+      : null}
 
-      {/* Personal Time */}
+      { showInteractive ? 
       <PT updateChart = {updateChart}/>
-
+      : null}
+      
+      { showInteractive ? 
       <Necessities updateChart = {updateChart}/>
+      : null}
 
+      { showPrint ? 
       <Printable names = {Classes_} hours = {Homework_} personalTime = {PersonalTime_} necessities = {Necessities_}/>
+      : null }
 
       <div class = "container">
         {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
         <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
-
+      
+      { showInteractive ? 
       <div class = 'container'>
-          <Button variant="primary" >Print</Button>
+          <Button variant="primary" onClick = {updatePrintFunction}>Print</Button>
       </div>
+      : null}
 
     </div>
   )
