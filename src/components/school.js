@@ -105,6 +105,10 @@ export default function School(data) {
 
     let chartData = chartState.datasets[0].data
     
+    console.log(Homework_)
+
+    console.log(Classes_)
+
     //Update Homework Hours and School Hours
     if(Homework != null){
       let HomeworkSum = 0
