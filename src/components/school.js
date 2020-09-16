@@ -270,7 +270,7 @@ export default function School(data) {
       
       { showInteractive ? 
       <div class = 'container'>
-          <Button variant="primary" onClick = {updatePrintFunction}>Print</Button>
+          <Button variant="primary" size="lg" block onClick = {updatePrintFunction}>Print</Button>
       </div>
       : null}
 
