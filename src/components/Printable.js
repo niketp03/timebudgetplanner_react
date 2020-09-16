@@ -3,16 +3,22 @@ import React, { Component } from 'react'
 export default class Printable extends Component {
     
     state = {
-        "Update": 0
-    }
-    
+        value: this.props
+    };
+      
+    componentDidUpdate(prevProps) {
+        if(prevProps !== this.props) {
+          this.setState({value: this.props});
+        }
+      }
+
     render() {
         return (
             <div class="container"   style={{display: "block"}}>
                 <div class="content-section-heading text-center">
                     <h2 class="text-secondary mb-0">Homework and Class Time</h2>
 
-                    <h5>Time in School: {("Hours per week in school" in this.props.names) ? this.props.hours["Hours per week in school"] + " hours" : "None"}</h5>
+                    <h5>Time in School: {("Hours per week in school" in this.props.hours) ? this.props.hours["Hours per week in school"] + " hours" : "None"}</h5>
                     <div class="row">
                         <div class="col-sm-4">
                             <h5>History: {("History" in this.props.names && "History" in this.props.hours) ? this.props.names["History"] + " - " + this.props.hours["History"] + " hours" : "None"}</h5>

@@ -5,8 +5,14 @@ import Printable from "./Printable";
 import PT from "./PT"
 import Necessities from "./Necessities"
 import { Doughnut } from 'react-chartjs-2';
-import { Alert } from 'react-bootstrap';
+import { Alert, Button } from 'react-bootstrap';
 import { Helmet } from "react-helmet"
+
+let Homework_ = {};
+let PersonalTime_ = {};
+let Necessities_ = {};
+let Classes_ = {};
+let updatePrint = false;
 
 export default function School(data) {
 
@@ -93,11 +99,6 @@ export default function School(data) {
     }
   }
 
-  let Homework_ = {};
-  let PersonalTime_ = {};
-  let Necessities_ = {};
-  let Classes_ = {};
-
   function updateChart(Homework, PersonalTime, Necessities, Classes){
     Homework_ = Homework;
     PersonalTime_ = PersonalTime;
@@ -106,10 +107,6 @@ export default function School(data) {
 
     let chartData = chartState.datasets[0].data
     
-    console.log(Homework_)
-
-    console.log(Classes_)
-
     //Update Homework Hours and School Hours
     if(Homework != null){
       let HomeworkSum = 0
@@ -257,6 +254,11 @@ export default function School(data) {
         {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
         <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
+
+      <div class = 'container'>
+          <Button variant="primary" >Print</Button>
+      </div>
+
     </div>
   )
 }   
