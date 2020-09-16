@@ -1,30 +1,35 @@
 import React, { Component } from 'react'
 
 export default class Printable extends Component {
+    
+    state = {
+        "Update": 0
+    }
+    
     render() {
         return (
             <div class="container"   style={{display: "block"}}>
                 <div class="content-section-heading text-center">
                     <h2 class="text-secondary mb-0">Homework and Class Time</h2>
 
-                    <h5>Time in School: 35 Hours</h5>
+                    <h5>Time in School: {("Hours per week in school" in this.props.names) ? this.props.hours["Hours per week in school"] + " hours" : "None"}</h5>
                     <div class="row">
                         <div class="col-sm-4">
-                            <h5>History: {}</h5>
-                            <h5>English: None</h5>
-                            <h5>Mathematics: None</h5>
+                            <h5>History: {("History" in this.props.names && "History" in this.props.hours) ? this.props.names["History"] + " - " + this.props.hours["History"] + " hours" : "None"}</h5>
+                            <h5>English: {("English" in this.props.names && "English" in this.props.hours) ? this.props.names["English"] + " - " + this.props.hours["English"] + " hours": "None"}</h5>
+                            <h5>Mathematics: {("Mathematics" in this.props.names && "Mathematics" in this.props.hours) ? this.props.names["Mathematics"] + " - " + this.props.hours["Mathematics"] + " hours": "None"}</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5>Science: None</h5>
-                            <h5>World Language: None</h5>
-                            <h5>Visual and Performing Arts: None</h5>
+                            <h5>Science: {("Science" in this.props.names && "Science" in this.props.hours) ? this.props.names["Science"] + " - " + this.props.hours["Science"] + " hours": "None"}</h5>
+                            <h5>World Language: {("World Language" in this.props.names && "World Language" in this.props.hours) ? this.props.names["World Language"] + " - " + this.props.hours["World Language"] + " hours": "None"}</h5>
+                            <h5>Visual and Performing Arts: {("Visual and Performing Arts" in this.props.names && "Visual and Performing Arts" in this.props.hours) ? this.props.names["Visual and Performing Arts"] + " - " + this.props.hours["Visual and Performing Arts"] + " hours": "None"}</h5>
                         </div>
                         <div class="col-sm-4">
-                            <h5>College Prep Elective: None</h5>
-                            <h5>Extra Class 1: None</h5>
-                            <h5>Extra Class 2: None</h5>
+                            <h5>College Prep Elective: {("College Prep Elective" in this.props.names && "College Prep Elective" in this.props.hours) ? this.props.names["College Prep Elective"] + " - " + this.props.hours["College Prep Elective"] + " hours": "None"}</h5>
+                            <h5>Extra Class 1: {("Extra Class 1" in this.props.names && "Extra Class 1" in this.props.hours) ? this.props.names["Extra Class 1"] + " - " + this.props.hours["Extra Class 1"] + " hours": "None"}</h5>
+                            <h5>Extra Class 2: {("Extra Class 2" in this.props.names && "Extra Class 2" in this.props.hours) ? this.props.names["Extra Class 2"] + " - " + this.props.hours["Extra Class 2"] + " hours": "None"}</h5>
                         </div>
-                        <h5>Total Hours: 35 Hours</h5>
+
                     </div>
 
                     <h2 class="text-secondary mb-0">Personal Time</h2>
