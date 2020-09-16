@@ -264,13 +264,13 @@ export default function School(data) {
       : null }
 
       <div class = "container">
-        {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
+        {timeSum-168 > 0 && <Alert variant={"danger"}>You are {Number((timeSum-168).toFixed(1))} hours over the limit! There are only 168 hours in a week</Alert>}
         <Doughnut ref={(reference) => chartReference = reference } id = 'mainChart' data={chartState} height={chartHeight}/>
       </div>
       
       { showInteractive ? 
-      <div class = 'container'>
-          <Button variant="primary" size="lg" block onClick = {updatePrintFunction}>Print</Button>
+      <div class = 'container' style={{paddingTop: "50px", paddingBottom: "50px"}} >
+          <Button variant="primary" size = 'lg' block onClick = {updatePrintFunction}>Print</Button>
       </div>
       : null}
 
