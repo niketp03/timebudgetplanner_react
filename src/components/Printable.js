@@ -20,7 +20,7 @@ export default class Printable extends Component {
         return (
             <div class="container"   style={{display: "block"}}>
                 <div class="content-section-heading text-center">
-                    <h2 class="text-secondary mb-0">Homework and Class Time</h2>
+                    <h2 class="text-secondary mb-0" style={{paddingTop: "35px"}}>Homework and Class Time</h2>
 
                     <h5>Time in School: {("Hours per week in school" in this.hours) ? this.hours["Hours per week in school"] + " hours" : "None"}</h5>
                     <div class="row">
@@ -42,7 +42,7 @@ export default class Printable extends Component {
 
                     </div>
 
-                    <h2 class="text-secondary mb-0">Personal Time</h2>
+                    <h2 class="text-secondary mb-0" style={{paddingTop: "35px"}}>Personal Time</h2>
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -59,7 +59,7 @@ export default class Printable extends Component {
                         </div>
                     </div>
 
-                    <h2 class="text-secondary mb-0">Necessities</h2>
+                    <h2 class="text-secondary mb-0" style={{paddingTop: "35px"}}>Necessities</h2>
 
                     <div class="row">
                         <div class="col-sm-4">
@@ -78,10 +78,10 @@ export default class Printable extends Component {
                     </div>
 
 
-                    <div>
-                        <h3>Student Signature_______________________________________</h3>
-                        <h3>Parent Signature________________________________________</h3>
-                        <h3>Date________________</h3>
+                    <div style={{paddingTop: "35px"}}>
+                        <h3 style={{paddingTop: "20px"}}>Student Signature_______________________________________</h3>
+                        <h3 style={{paddingTop: "20px"}}>Parent Signature________________________________________</h3>
+                        <h3 style={{paddingTop: "20px"}}>Date________________</h3>
                     </div>
                 </div>
             </div>
