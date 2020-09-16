@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import * as CSV from 'csv-string';
 import HSCT from "./HSCT";
+import Printable from "./Printable";
 import PT from "./PT"
 import Necessities from "./Necessities"
 import { Doughnut } from 'react-chartjs-2';
@@ -249,6 +250,8 @@ export default function School(data) {
       <PT updateChart = {updateChart}/>
 
       <Necessities updateChart = {updateChart}/>
+
+      <Printable names = {Classes_} hours = {Homework_} personalTime = {PersonalTime_} necessities = {Necessities_}/>
 
       <div class = "container">
         {timeSum-168 > 0 && <Alert variant={"danger"}>You are {timeSum-168} hours over the limit! There are only 168 hours in a week</Alert>}
