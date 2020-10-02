@@ -28,8 +28,8 @@ export default class HSCTGeneric extends React.Component {
             <div class="container">
                 <div class="content-section-heading text-center">
                     <h2 class="text-secondary mb-0">Homework and Class Time</h2>
-                    <h4>Please leave it as "Choose..." if you do not have a class in that section. All hours are listed per 7-day week.</h4>
-                    <h5>Hours are teacher reported and averaged. You cannot select a lower amount than the average.</h5>
+                    <h4>All hours are listed per 7-day week.</h4>
+                    <h5>Please indicate the average number of hours you spend per week doing homework for each subject.</h5>
                     <InputCardSliderOnly 
                         title={"Hours per week in school"} 
                         data={[0, 60]} 
