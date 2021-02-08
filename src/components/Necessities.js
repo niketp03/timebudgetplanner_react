@@ -22,7 +22,7 @@ export default class Necessities extends React.Component {
                     <CardDeck 
                         sliderOnly={true}
                         data = {{
-                            "Sleep": [49, 70, "Preset at 7 hours of sleep a night however 9 hours is highly recommended for high school teens", "https://www.loom.com/share/25b369a3ae7941c29f24386d02208278"],
+                            "Sleep": [49, 70, "Preset at the recommended 9 hours of sleep a night however please adjust this to the amount of time you normally sleep.", "https://www.loom.com/share/25b369a3ae7941c29f24386d02208278"],
                             "Necessities": [0, 25, "Eating, showering, chores, etc."],
                             "Down Time": [0, 25, "Meditation, transportation, etc."]
                         }}
