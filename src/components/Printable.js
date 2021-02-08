@@ -87,4 +87,4 @@ export default class Printable extends Component {
             </div>
         )
     }
-}
+}   

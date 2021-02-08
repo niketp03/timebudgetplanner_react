@@ -245,10 +245,20 @@ export default function School(data) {
 
   let chartHeight = 175
 
+  var printPage = () => {
+    if(window!= null){window.print()}
+  }
+
   var updatePrintFunction = () => {
     setShowPrint(true)
     setShowInteractive(false)
   }
+
+  React.useEffect(() => {
+    if(showPrint){
+      printPage()
+    }
+  });
 
   return (
     <div>
