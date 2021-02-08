@@ -102,10 +102,21 @@ export default function School(data) {
   }
 
   function updateChart(Homework, PersonalTime, Necessities, Classes){
-    Homework_ = Homework;
-    PersonalTime_ = PersonalTime;
-    Necessities_ = Necessities;
-    Classes_ = Classes;
+    if(Homework != null){
+      Homework_ = Homework;
+    }
+
+    if(PersonalTime != null){
+      PersonalTime_ = PersonalTime;
+    }
+    
+    if(Necessities != null){
+      Necessities_ = Necessities;
+    }
+
+    if(Classes != null){
+      Classes_ = Classes;
+    }
 
     let chartData = chartState.datasets[0].data
     
