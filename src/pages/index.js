@@ -30,7 +30,7 @@ const IndexPage = () => {
           <div class="d-xl-none">
             <h4>This device may be too small to properly print this webpage</h4>
           </div>
-          <h4 class="mb-4">Please complete the Time Budget Worksheet to determine the feasibility of your schedule next year. Please select your classes and other activities that you plan on participating in for the 2019 - 2020 school year.</h4>
+          <h4 class="mb-4">Please complete the Time Budget Worksheet to determine the feasibility of your schedule next year. Please select your classes and other activities that you plan on participating in for the 2021 - 2022 school year.</h4>
         </div>
       </header>
     </div>
