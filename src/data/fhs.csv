@@ -1,9 +1,7 @@
 Class Name,Minimum Recomended Hours,Maximum Recomended Hours,Category Letters
 World Cultures,2,16,a
-GPS World Cultures,2,16,a
 AP European History,4,16,a
 U.S. History,1.5,16,a
-GPS U.S. History,1.5,16,a
 AP U.S. History,5,16,a
 Economics,1.5,16,a
 Government,1.5,16,a
@@ -19,6 +17,7 @@ Honors English 2 (Pre-AP),3,16,b
 AP English Language & Composition,4,16,b
 AP English Literature & Composition,4,16,b
 CSU ERWC,1,16,b
+Methods of Film Criticism English 4,2,16,b
 Integrated Math 1,2,16,cg
 Integrated Math 2,2,16,cg
 Integrated Math 3,3,16,cg
@@ -30,14 +29,12 @@ Pre-Calculus,4,16,cg
 Highlights of Calculus,3,16,cg
 AP Calculus AB,7,16,cg
 AP Calculus BC,5,16,cg
-Exploration of Data,1,16,cg
 Biology: The Living Earth,2,16,dg
 Physics in the Universe,1.5,16,dg
 Chemistry in the Earth System,2,16,dg
 Honors Chemistry in the Earth System,3,16,dg
 AP Biology,5,16,dg
 AP Chemistry,6,16,dg
-Honors Physics,2,16,dg
 AP Physics,3,16,dg
 AP Environmental Science,5.5,16,dg
 Forensics,2,16,dg
@@ -53,7 +50,7 @@ German AP Lang,3,16,e
 Spanish 1,1.5,16,e
 Spanish 2,2,16,e
 Spanish 3,2.5,16,e
-Spanish 4,3,16,e
+Honors Spanish 4,3,16,e
 Spanish AP Lang,3,16,e
 Beginning Chorus,0.7,16,fg
 Chamber Choir,2,16,fg
